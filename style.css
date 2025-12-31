@@ -6,8 +6,14 @@
 }
 
 body {
-    background: #f5f7fb;
+    background-color: #1a1a1a !important; /* !important forces it to stay black */
+    color: #ffffff !important;            /* Forces text to stay white */
+    margin: 0;
+    padding: 0;
     padding-top: 80px;
+    font-size: 16px;                      /* Locks the text size */
+    -webkit-text-size-adjust: 100%;       /* Stops mobile/PC from auto-enlarging text */
+    overflow-x: hidden;                   /* Prevents horizontal scrolling */
 }
 
 /* ===== NAVBAR: Logo Left, Links Right ===== */
@@ -136,22 +142,20 @@ body {
 }
 
 .cards {
-    display: grid;
-    /* This forces the cards to be rectangular and stay in a row */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px;
+    display: flex;             /* Switch to flex for better horizontal control */
+    flex-wrap: nowrap;         /* Forces them to stay in ONE row */
+    overflow-x: auto;          /* If there are too many, your friend can scroll left/right */
+    gap: 20px;
+    padding: 20px 80px;        /* Matches your navbar alignment */
 }
 
-/* ===== THE POPUP CARD EFFECT ===== */
 .card {
-    background: #222;
+    flex: 0 0 300px;           /* Forces every card to be exactly 300px wide */
+    background: #222 !important;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: all 0.3s ease-in-out; /* Smooth transition for the popup */
-    cursor: pointer;
+    transition: 0.3s;
 }
-
 .card:hover {
     transform: translateY(-10px) scale(1.03); /* Pops UP and scales slightly */
     box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2); /* Adds a subtle orange glow */
@@ -165,29 +169,23 @@ body {
 
 /* Internal text alignment fix */
 .card-content {
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    gap: 8px;
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .card-content h3 {
+    font-size: 18px !important; /* Forced size */
     margin: 0;
-    color: white;
-    font-size: 18px;
 }
 
 .card-content p {
-    margin: 0;
+    font-size: 13px !important; /* Forced size */
     color: #bbb;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
-.card-content i { 
-   color: #ff69b4;
-    margin-right: 8px; 
+.card-content i {
+    color: #ff69b4; /* Pink Heart */
 }
