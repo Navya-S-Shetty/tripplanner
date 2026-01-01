@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripPlanner</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripPlanner</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo"><i class="fa-solid fa-earth-americas"></i> TripPlanner</div>
+  <div class="logo">
+    <i class="fa-solid fa-earth-americas"></i> TripPlanner
+  </div>
 
   <ul class="nav-links">
     <li>🏠 Home</li>
@@ -19,22 +25,26 @@
   </ul>
 </nav>
 
-
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Plan Your Perfect Trip ✨</h1>
     <p>Discover places • Build wishlist • Smart itinerary</p>
+
     <div class="hero-btns">
-        <button class="btn signup-btn">Sign Up</button>
-        <button class="btn login-btn">Login</button>
+      <button class="btn signup-btn">Sign Up</button>
+      <button class="btn login-btn">Login</button>
     </div>
   </div>
 </section>
 
-
+<!-- CARDS -->
 <section class="cards-section">
-    <h2>Popular Destinations</h2>
+  <h2>Popular Destinations</h2>
+
+  <div class="cards-wrapper">
     <div class="cards" id="cards"></div>
+  </div>
 </section>
 
 <script src="script.js"></script>

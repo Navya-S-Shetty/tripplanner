@@ -1,37 +1,41 @@
+/* ===== RESET ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;   /* NO SCROLLBAR */
+}
+
+/* ===== BODY ===== */
 body {
-    background-color: #1a1a1a !important; /* !important forces it to stay black */
-    color: #ffffff !important;            /* Forces text to stay white */
-    margin: 0;
-    padding: 0;
-    padding-top: 80px;
-    font-size: 16px;                      /* Locks the text size */
-    -webkit-text-size-adjust: 100%;       /* Stops mobile/PC from auto-enlarging text */
-    overflow-x: hidden;                   /* Prevents horizontal scrolling */
+  background: #1a1a1a;
+  color: #ffffff;
+  padding-top: 80px;
 }
 
-/* ===== NAVBAR: Logo Left, Links Right ===== */
+/* ===== NAVBAR ===== */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 80px;
-  height: 80px;
-  background-color: #111;
   position: fixed;
   top: 0;
+  left: 0;
+  height: 80px;
   width: 100%;
+  background: #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* LOGO LEFT, LINKS RIGHT */
+
+  padding: 0 40px;
   z-index: 1000;
 }
 
 .logo {
-  color: #fff;
   font-size: 24px;
   font-weight: 700;
   display: flex;
@@ -40,7 +44,7 @@ body {
 }
 
 .logo i {
-    color: #ff6b35;
+  color: #ff6b35;
 }
 
 .nav-links {
@@ -50,142 +54,111 @@ body {
 }
 
 .nav-links li {
-  color: #fff;
-  cursor: pointer;
   font-size: 16px;
-  transition: 0.3s;
+  cursor: pointer;
 }
 
 .nav-links li:hover {
   color: #ff6b35;
 }
 
-/* ===== HERO SECTION: Centered Content ===== */
+/* ===== HERO ===== */
 .hero {
   height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") no-repeat center center / cover;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+    center / cover no-repeat;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column; /* Force vertical stacking */
-    align-items: center;
-    gap: 20px;
+.hero-content h1 {
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
-.hero h1 {
-  font-size: 58px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.hero p {
-  font-size: 20px;
+.hero-content p {
+  font-size: 18px;
   color: #f1f1f1;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* Centered Buttons */
 .hero-btns {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
 .btn {
-    padding: 12px 30px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 0.3s;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .signup-btn {
-    background: #ff6b35;
-    color: white;
+  background: #ff6b35;
+  color: white;
 }
 
 .login-btn {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
 }
 
-.signup-btn:hover { background: #e55a2b; }
-.login-btn:hover { background: rgba(255,255,255,0.1); }
-
 /* ===== CARDS SECTION ===== */
-/* ===== CARDS SECTION: FIXED ALIGNMENT ===== */
-/* ===== CARDS SECTION: FIXED ALIGNMENT & SPREAD ===== */
-/* ===== CARDS SECTION: BACK TO FULL WIDTH & ALIGNED ===== */
-/* ===== CARDS SECTION: BEAUTIFUL GRID & PERFECT ALIGNMENT ===== */
-/* ===== CARDS SECTION: SQUARE CARDS IN ONE ROW ===== */
-/* ===== CARDS SECTION: GRID RESTORED & ALIGNED ===== */
 .cards-section {
-    padding: 60px 80px;      /* Aligns Popular Destinations with Logo/Cards */
-    width: 100%;
+  padding: 60px 40px;
 }
 
 .cards-section h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: white;
-    text-align: left;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+/* ===== CARDS (ONE ROW, FIXED SIZE) ===== */
+.cards-wrapper {
+  overflow: hidden;        /* NO SCROLLBAR */
 }
 
 .cards {
-    display: flex;             /* Switch to flex for better horizontal control */
-    flex-wrap: nowrap;         /* Forces them to stay in ONE row */
-    overflow-x: auto;          /* If there are too many, your friend can scroll left/right */
-    gap: 20px;
-    padding: 20px 80px;        /* Matches your navbar alignment */
+  display: flex;
+  flex-wrap: nowrap;       /* FORCE ONE ROW */
+  gap: 20px;
 }
 
 .card {
-    flex: 0 0 300px;           /* Forces every card to be exactly 300px wide */
-    background: #222 !important;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-10px) scale(1.03); /* Pops UP and scales slightly */
-    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2); /* Adds a subtle orange glow */
+  width: 260px;            /* FIXED SIZE */
+  min-width: 260px;
+  max-width: 260px;
+
+  background: #222;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* Internal text alignment fix */
 .card-content {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+  padding: 15px;
 }
 
 .card-content h3 {
-    font-size: 18px !important; /* Forced size */
-    margin: 0;
+  font-size: 18px;
 }
 
 .card-content p {
-    font-size: 13px !important; /* Forced size */
-    color: #bbb;
-}
-
-.card-content i {
-    color: #ff69b4; /* Pink Heart */
+  font-size: 13px;
+  color: #ff69b4;
 }
